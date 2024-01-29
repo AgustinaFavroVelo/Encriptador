@@ -20,7 +20,13 @@ function encriptar(){
         meme.src="./img/angry-rat.jpg";
         tituloMensaje.textContent = "Ningún mensaje fue encontrado";
         parrafo.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
-        swal("Ooops!", "Debes ingresar un texto", "warning");
+        Swal.fire({
+            title: 'Oops!',
+            text: 'Debes ingresar un texto.',
+            icon: 'warning',
+            timer: 2000, // Duration of the notification in milliseconds
+            showConfirmButton: false // Hide the "OK" button
+          });
     }
 }
 
@@ -40,7 +46,7 @@ function copyMessage() {
     // Show a notification to indicate that the message has been copied
     Swal.fire({
       title: 'Copied!',
-      text: 'The encrypted message has been copied to the clipboard.',
+      text: 'El mensaje encriptado ha sido copiado al portapapeles.',
       icon: 'success',
       timer: 2000, // Duration of the notification in milliseconds
       showConfirmButton: false // Hide the "OK" button
@@ -70,6 +76,12 @@ function desencriptar() {
         meme.src = "./img/angry-rat.jpg";
         tituloMensaje.textContent = "Ningún mensaje fue encontrado";
         parrafo.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
-        swal("Ooops!", "Debes ingresar un texto", "warning");
+        Swal.fire({
+            title: 'Oops!',
+            text: 'Debes ingresar un texto.',
+            icon: 'warning',
+            timer: 2000, // Duration of the notification in milliseconds
+            showConfirmButton: false // Hide the "OK" button
+          });
     }
 }
