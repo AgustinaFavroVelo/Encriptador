@@ -1,0 +1,251 @@
+* {
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background:#e6d8eb;
+}
+
+.text {
+    position: absolute;
+    width: 42%;
+    height: 60%;
+    left: 12%;
+    top:15%;
+    border: none;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    background-color:#e6d8eb;
+}
+
+.text::placeholder{
+    color:rgb(81, 24, 146) ;
+}
+
+.text:focus,
+.text:active{
+    border: none;
+    outline: none;
+}
+
+.terminos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap:8px;
+    position:absolute;
+    width: 80%;
+    left:12%;
+    top:80% ;
+}
+
+.terminos p{
+    font-family: "Inter"; /* solo declaro lo que no va a heredar del padre */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color:#495057;
+    opacity:0.8;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.button-container{
+    display:flex; /* flex es mejor cuando quiero un elemento al lado del otro */
+    flex-direction: row;
+    align-items: flex-start;
+    padding:1% 0;
+    position: absolute;
+    width: 80%;
+    left:12%;
+    top:82% ; /* es el 80 de los terminos y un poco mas porque los terminos ocupan espacio */
+}
+
+.boton-encriptar{
+    align-items: center;
+    justify-content: center ;
+    padding:2%;
+    gap: 8px;
+    width: 25%;
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+    color: #fff;
+    background-color: #900bdd;
+    border-radius: 24px;
+}
+
+.boton-desencriptar{
+    align-items: center;
+    justify-content: center ;
+    padding:2%;
+    gap: 8px;
+    width: 25%;
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+    color: #fff;
+    background-color: #b6f345;
+    border-radius: 24px;
+    margin-left: 2%;
+}
+
+.boton-encriptar:hover,
+.boton-desencriptar:hover,
+.boton-copiar:hover{
+    width: 24.5%;
+    padding:1.8%;
+}
+
+.encripted-text{
+    display:flex;
+    justify-content: center;
+    position:absolute;
+    width: 30%;
+    height: 90%;
+    left:60%;
+    top:5%;
+    background: #fff;
+    box-shadow: 0px 24px 32px -8px rgba(0,0,0,0.8);
+    border-radius: 32px;
+}
+
+.texto-encriptado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center ;
+    padding: 1%;
+    gap: 16px;
+    position: absolute;
+    width: 100%;
+    top: 65%;
+    text-align: center;
+}
+
+.texto-encriptado h2{
+    width: 60%;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    color:#900bdd;
+}
+
+#mensaje-encriptado{
+    width: 80%;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color:#b6f345;
+}
+
+.boton-copiar{
+    align-items: center;
+    justify-content: center ;
+    padding:2%;
+    width: 25%;
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+    border-radius: 12px;
+    background-color:#900bdd;
+    color:#b6f345;
+}
+
+.encripted-text img{
+    position: absolute;
+    width: 80%;
+    height: 50%;
+    top:15%;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 57.5em){
+    body{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .encripted-text{
+        width: 100%;
+    }
+
+    .text{
+        width:80%;
+        height: 60%;
+        left: 10%;
+        top: 5%;
+    }
+
+    .terminos{
+        width: 80%;
+        left: 10%;
+        top:67%;
+    }
+
+    .terminos p{
+        font-size: 15px;
+    }
+
+    .button-container{
+        width: 70%;
+        left: 10%;
+        top: 70%;
+    }
+    
+    .boton-desencriptar,
+    .boton-encriptar{
+        font-size: 15px;
+        width: 48%;
+        border-radius: 14px;
+    }
+    .boton-desencriptar:hover,
+    .boton-encriptar:hover,
+    .boton-copiar:hover{
+        width: 47.5%;
+        padding: 2%;
+    }
+    .encripted-text{
+        width: 80%;
+        height: 15%;
+        left: 10%;
+        top:80%;
+    }
+    
+    #mensaje-encriptado{
+        width: 100%;
+        top:5%;
+    }
+    .texto-encriptado{
+        top:0;
+    }
+    
+    .texto-encriptado h2{
+        font-size: 18px;
+    }
+    .encripted-text img{
+        display: none;
+        top:0;
+        visibility: hidden;
+    }
+   
+}

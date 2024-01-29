@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet"> -->
+    <link rel="stylesheet" href="styles.css">
+
+    <title>The secret message</title>
+</head>
+<body>
+    <h1> Encriptador </h1>   
+    <div class="text-container">
+        <textarea name="text" class="text" id="text" rows="10" cols="50" placeholder=" Escribe tu mensaje aquí "> </textarea>
+    </div>
+
+    <div class="terminos">
+        <p>Utilice solo letras minusculas sin acentos</p>
+    </div>
+
+    <div class="button-container">
+        <button class="boton-encriptar" onclick="encriptar()"> Encriptar </button>
+        <button class="boton-desencriptar" value="desencriptar" onclick="desencriptar()" >Desencriptar</button>
+    </div>
+
+    <div class="encripted-text">
+        <img src="img/loading.png" alt="" id="meme">
+        <div class="texto-encriptado" id="texto-encriptado"> 
+            <h2 id="mensaje-titulo"> Ningun mensaje encontrado</h2>
+            <p id="mensaje-encriptado"> Ingrese el texto que desea encriptar o desencriptar</p>
+            <!-- <textarea name="mensaje" class="mensaje" id="mensaje" rows="10" cols="50"></textarea> -->
+            <button type=button class="boton-copiar" onclick="copiar()" >Copiar</button>
+        </div>
+    </div>
+    
+       
+    
+    
+    <script src="app.js"> </script>
+</body>
+</html>
