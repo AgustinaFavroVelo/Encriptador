@@ -11,7 +11,7 @@ function encriptar(){
         .replace(/o/gi, "ober")
         .replace(/u/gi, "ufat");
 
-    if (texto.lenght != 0){
+    if (texto.length != 0){
         texto = textoCifrado;
         tituloMensaje.textContent = "Texto encriptado con exito"
         parrafo.textContent="";
