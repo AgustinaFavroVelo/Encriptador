@@ -24,6 +24,30 @@ function encriptar(){
     }
 }
 
+function copyMessage() {
+    // Get the textarea element
+    let textarea = document.getElementById("text");
+  
+    // Select the text inside the textarea
+    textarea.select();
+  
+    // Copy the selected text to the clipboard
+    document.execCommand("copy");
+  
+    // Deselect the text
+    textarea.setSelectionRange(0, 0);
+  
+    // Show a notification to indicate that the message has been copied
+    Swal.fire({
+      title: 'Copied!',
+      text: 'The encrypted message has been copied to the clipboard.',
+      icon: 'success',
+      timer: 2000, // Duration of the notification in milliseconds
+      showConfirmButton: false // Hide the "OK" button
+    });
+  }
+ 
+
 function desencriptar() {
     let texto = document.getElementById("text").value;
     let tituloMensaje = document.getElementById("mensaje-titulo");
