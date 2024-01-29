@@ -13,8 +13,8 @@ function encriptar(){
 
     if (texto.length != 0){
         texto = textoCifrado;
-        tituloMensaje.textContent = "Texto encriptado con exito"
-        parrafo.textContent="";
+        tituloMensaje.textContent = "Texto encriptado con exito";
+        parrafo.innerText=texto;
         meme.src ="./img/Dogecoin-2-1200x640.jpg";
     } else {
         meme.src="./img/angry-rat.jpg";
@@ -40,7 +40,7 @@ function desencriptar() {
     if (texto.length != 0) {
         document.getElementById("text").value = textoCifrado;
         tituloMensaje.textContent = "Texto desencriptado con éxito";
-        parrafo.textContent = "";
+        parrafo.textContent = textoCifrado;
         meme.src = "./img/Dogecoin-2-1200x640.jpg";
     } else {
         meme.src = "./img/angry-rat.jpg";
