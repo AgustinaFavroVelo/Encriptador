@@ -38,12 +38,12 @@ function desencriptar() {
     .replace(/ufat/gi, "u");
   
     if (texto.length != 0) {
-      document.getElementById("texto").value = textoCifrado;
+      document.getElementById("text").value = textoCifrado;
       tituloMensaje.textContent = "Texto desencriptado con éxito";
       parrafo.textContent = "";
-      muñeco.src = "./img/Dogecoin-2-1200x640.jpg";
+      meme.src = "./img/Dogecoin-2-1200x640.jpg";
     } else {
-      muñeco.src = "./img/angry-rat.jpg";
+      meme.src = "./img/angry-rat.jpg";
       tituloMensaje.textContent = "Ningún mensaje fue encontrado";
       parrafo.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
       swal("Ooops!", "Debes ingresar un texto", "warning");
