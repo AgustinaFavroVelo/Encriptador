@@ -4,73 +4,83 @@ function encriptar(){
     let parrafo = document.getElementById("mensaje-encriptado");
     let meme = document.getElementById("meme")
 
-    let textoCifrado = texto
-        .replace(/e/gi, "enter")
-        .replace(/i/gi, "imes")
-        .replace(/a/gi, "ai")
-        .replace(/o/gi, "ober")
-        .replace(/u/gi, "ufat");
+    if (validateInput(texto)) {
+        let textoCifrado = texto
+            .replace(/e/gi, "enter")
+            .replace(/i/gi, "imes")
+            .replace(/a/gi, "ai")
+            .replace(/o/gi, "ober")
+            .replace(/u/gi, "ufat");
 
-    if (texto.length != 0){
-        texto = textoCifrado;
+        document.getElementById("text").value = textoCifrado
+
         tituloMensaje.textContent = "Texto encriptado con exito";
-        parrafo.innerText=texto;
-        meme.src ="./img/Dogecoin-2-1200x640.jpg";
+        parrafo.textContent = "";
+        meme.src = "./img/Dogecoin-2-1200x640.jpg";
     } else {
-        meme.src="./img/angry-rat.jpg";
-        tituloMensaje.textContent = "Ningún mensaje fue encontrado";
-        parrafo.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
+        meme.src = "./img/angry-rat.jpg";
+        tituloMensaje.textContent = "Error: Ingrese un texto con letras minúsculas";
+        parrafo.textContent = "Ingresa un texto válido sin caracteres especiales ni mayúsculas";
         Swal.fire({
             title: 'Oops!',
-            text: 'Debes ingresar un texto.',
+            text: 'Solo minúsculas.',
             icon: 'warning',
-            timer: 2000, // Duration of the notification in milliseconds
-            showConfirmButton: false // Hide the "OK" button
-          });
+            timer: 2000, 
+            showConfirmButton: false
+        });
     }
 }
 
+function validateInput(text) {
+    // asi acepta solo minusculas
+    const regex = /^[a-z\s]+$/;
+    return regex.test(text);
+}
+
+
 function copyMessage() {
-    // Get the textarea element
+    // Get el elemeto textarea 
     let textarea = document.getElementById("text");
   
-    // Select the text inside the textarea
+    // seleccionar dentro del textarea
     textarea.select();
   
-    // Copy the selected text to the clipboard
+    // copiar texto a clipboard
     document.execCommand("copy");
   
-    // Deselect the text
+    // deseleccionar texto
     textarea.setSelectionRange(0, 0);
   
-    // Show a notification to indicate that the message has been copied
+    // mensaje copiado notificacion
     Swal.fire({
       title: 'Copied!',
       text: 'El mensaje encriptado ha sido copiado al portapapeles.',
       icon: 'success',
-      timer: 2000, // Duration of the notification in milliseconds
-      showConfirmButton: false // Hide the "OK" button
+      timer: 2000, // duracion
+      showConfirmButton: false // esconde el "OK" button
     });
   }
  
 
-function desencriptar() {
+  function desencriptar() {
     let texto = document.getElementById("text").value;
     let tituloMensaje = document.getElementById("mensaje-titulo");
     let parrafo = document.getElementById("mensaje-encriptado");
     let meme = document.getElementById("meme");
 
-    let textoCifrado = texto
-        .replace(/enter/gi, "e")
-        .replace(/imes/gi, "i")
-        .replace(/ai/gi, "a")
-        .replace(/ober/gi, "o")
-        .replace(/ufat/gi, "u");
-  
     if (texto.length != 0) {
-        document.getElementById("text").value = textoCifrado;
+        let textoDescifrado = texto
+            .replace(/enter/gi, "e")
+            .replace(/imes/gi, "i")
+            .replace(/ai/gi, "a")
+            .replace(/ober/gi, "o")
+            .replace(/ufat/gi, "u");
+
+        // Mostrat el texto desencriptado
+        document.getElementById("text").value = textoDescifrado;
+
         tituloMensaje.textContent = "Texto desencriptado con éxito";
-        parrafo.textContent = textoCifrado;
+        parrafo.textContent = "";
         meme.src = "./img/Dogecoin-2-1200x640.jpg";
     } else {
         meme.src = "./img/angry-rat.jpg";
@@ -80,8 +90,8 @@ function desencriptar() {
             title: 'Oops!',
             text: 'Debes ingresar un texto.',
             icon: 'warning',
-            timer: 2000, // Duration of the notification in milliseconds
-            showConfirmButton: false // Hide the "OK" button
-          });
+            timer: 2000, 
+            showConfirmButton: false 
+        });
     }
 }

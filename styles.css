@@ -184,40 +184,57 @@ body{
         display: flex;
         flex-direction: row;
     }
+    .text {
+        width: 80%; 
+        height: 40vh; 
+        font-size: 18px; 
+        left: 10%;
+        top: 10%;
+    }
 
     .encripted-text{
         width: 100%;
     }
 
-    .text{
-        width:80%;
-        height: 60%;
-        left: 10%;
-        top: 5%;
-    }
 
-    .terminos{
-        width: 80%;
-        left: 10%;
+    .terminos {
+        display: flex;
+        justify-content: center; /* centro horizontalmente */
+        align-items: center; /* Centro verticalemnte */
+        flex-direction: column; /* alineo en columna */
         top:67%;
     }
 
-    .terminos p{
+    .terminos p {
+        text-align: center; /* Optionally, center the text within the paragraph */
         font-size: 15px;
     }
 
-    .button-container{
-        width: 70%;
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        width: 80%; 
+        margin: 0 auto; /* Deberia estar centrado con esto */
         left: 10%;
-        top: 70%;
+        top: 70%; 
     }
     
     .boton-desencriptar,
     .boton-encriptar{
-        font-size: 15px;
-        width: 48%;
+        font-size: 16px;
+        width: 50%;
         border-radius: 14px;
+    } 
+   
+    .boton-encriptar,
+    .boton-desencriptar,
+    .boton-copiar {
+        flex-grow: 1; /* Buttons crecen pata rellenar espacio de container */
+        margin: 0 5px; /* agregar espacio entre buttons */
+        width:100%;
+        padding: 5px;
     }
+
     .boton-desencriptar:hover,
     .boton-encriptar:hover,
     .boton-copiar:hover{
@@ -242,6 +259,7 @@ body{
     .texto-encriptado h2{
         font-size: 18px;
     }
+    /* Escondo las imagenes */
     .encripted-text img{
         display: none;
         top:0;
